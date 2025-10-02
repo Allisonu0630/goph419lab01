@@ -1,0 +1,97 @@
+# src/goph419lab01/functions.py
+
+import math
+
+def compute_sqrt(x):
+    """
+    Compute the real-valued positive square root of a real positive number
+    between 0.0 and 2.5 using a series expansion (Borwein & Chamberlain, 2007).
+
+    Parameters
+    ----------
+    x : float
+        Input value (0.0 <= x <= 2.5).
+
+    Returns
+    -------
+    float
+        Approximation of sqrt(x).
+
+    Raises
+    ------
+    ValueError
+        If x is outside the allowed domain.
+    """
+    if not (0.0 <= x <= 2.5):
+        raise ValueError("Input must be between 0.0 and 2.5")
+
+    if x == 0.0:
+        return 0.0
+
+    # Use a = 0.5 for expansion point
+    a = 0.5
+    sqrt_a = math.sqrt(a)
+    h = x - a
+
+    # Initialize series variables
+    k = 0
+    fact_k = 1.0
+    prod_k = 1.0
+    coef_k = 1.0
+    term_k = sqrt_a
+    sum_k = term_k
+
+    while True:
+        k += 1
+        fact_k *= k                       # factorial term
+        prod_k *= (0.5 - (k - 1))         # product term
+        coef_k = prod_k / fact_k / (a**k) # coefficient
+        term_k = coef_k * (h**k) * sqrt_a
+        new_sum = sum_k + term_k
+
+        # convergence check (8 sig figs)
+        if abs(new_sum - sum_k) < 1e-8:
+            break
+        sum_k = new_sum
+
+    return sum_k
+
+
+def compute_arcsin(x):
+    """
+    Compute arcsin(x) for real positive numbers between 0.0 and 1.0
+    using a series expansion (Borwein & Chamberlain, 2007).
+
+    Parameters
+    ----------
+    x : float
+        Input value (0.0 <= x <= 1.0).
+
+    Returns
+    -------
+    float
+        Approximation of arcsin(x).
+
+    Raises
+    ------
+    ValueError
+        If x is outside the allowed domain.
+    """
+    if not (0.0 <= x <= 1.0):
+        raise ValueError("Input must be between 0.0 and 1.0")
+
+    if x == 0.0:
+        return 0.0
+
+    y = term = x
+    n = 0
+
+    while True:
+        n += 1
+        term *= (2*n - 1)**2 / (4*n*(2*n + 1)) * x**2
+        y_new = y + term
+        if abs(y_new - y) < 1e-8:
+            break
+        y = y_new
+
+    return y
