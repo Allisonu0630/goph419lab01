@@ -1,11 +1,11 @@
 # goph419lab01
 # author: Allison Unruh
-Course:GOPH 419
-Instructor:B. Karchewski 
-Lab purpose: Calculate the range of launch angles for a rocket system.
-Implement custom algorithms for calculating sqrt of a number using taylor series, compute inverse sine function, model the launch angle for a rocket to reach it's desired altitude and analyze the launch angle range.
+#Course:GOPH 419
+#Instructor:B. Karchewski 
+#Lab purpose: Calculate the range of launch angles for a rocket system.
+#Implement custom algorithms for calculating sqrt of a number using taylor series, compute inverse sine function, model the launch angle for a rocket to reach it's desired #altitude and analyze the launch angle range.
 
-
+#before installation, user should have everything set up including installing git and python (+3.8). See lab 0 for more help. 
 #installation---> clone repo. 
 '''bash
 
