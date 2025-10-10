@@ -11,7 +11,7 @@ Implement custom algorithms for calculating sqrt of a number using taylor series
 
 git clone https://github.com/allisonu0630/goph419lab01.git
 
-cd goph419lab01
+cd C:\Users\allis\Repos\Courses\goph419\goph419lab01
 
 python -m venv envlab1
 
@@ -22,7 +22,7 @@ python -m pip install -r requirements.txt
 # to calc launch angles and create plots
 ''' bash
 
-python examples/driver.py
+python -m goph419lab01.examples.driver
 
 #to test against NumPy 
 '''bash
