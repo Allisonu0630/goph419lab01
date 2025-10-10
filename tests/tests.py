@@ -1,11 +1,19 @@
 # tests/tests.py
 """
-Simple tests for the lab functions.
-Run with: python -m tests.tests
+#Run with: python -m tests.tests
 """
 
 import numpy as np
+import os
+import sys
+
+#hard coding path to root so it can run on other devices
+#repo_root = #os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+#sys.path.append(os.path.join(repo_root, "src"))
+
 from goph419lab01 import functions
+
+
 
 def approx_equal(a, b, tol=1e-6):
     return abs(a - b) <= tol
@@ -16,7 +24,7 @@ def test_launch_angle_range_case():
     alpha = 0.25
     tol_alpha = 0.02
 
-    # expected using numpy (reference)
+    # expected using numpy reference
     def expected_launch_angle(r, a):
         sin2 = (1.0 + a) * (1.0 + a * (1.0 - r * r))
         if sin2 < 0.0 or sin2 > 1.0:
@@ -35,7 +43,7 @@ def test_launch_angle_range_case():
     print("Computed (deg):", np.degrees(comp_min), np.degrees(comp_max))
 
     if approx_equal(expected_min, comp_min) and approx_equal(expected_max, comp_max):
-        print("TEST PASS: launch_angle_range matches numpy reference (within tol).")
+        print("TEST PASS: launch_angle_range matches numpy")
     else:
         print("TEST FAIL: differences exceed tolerance.")
         print("Delta min:", abs(expected_min - comp_min))
@@ -43,7 +51,7 @@ def test_launch_angle_range_case():
 
 
 def numpy_test_arcsin_sqrt():
-    print("\n=== Testing sqrt(x) against NumPy ===")
+    print("\n Testing sqrt(x) against NumPy ")
     xs = np.linspace(0.0, 2.5, 10)
     for x in xs:
         approx = functions.sqrt(x)
@@ -52,7 +60,7 @@ def numpy_test_arcsin_sqrt():
         status = "PASS" if error <= 1e-8 else "FAIL"
         print(f"  sqrt({x:.4f}): approx={approx:.8f}, true={truth:.8f}, error={error:.2e} [{status}]")
 
-    print("\n=== Testing arcsin(x) against NumPy ===")
+    print("\n Testing arcsin(x) against NumPy ")
     ys = np.linspace(0.0, 1.0, 10)
     for y in ys:
         approx = functions.arcsin(y)

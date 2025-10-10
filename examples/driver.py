@@ -8,8 +8,17 @@ Driver:
 """
 
 import os
+import sys
+import pathlib
 import numpy as np
 import matplotlib.pyplot as plt
+
+# -have to add src/ to sys.path (so it will work on other machines) ---
+
+#ROOT_DIR = pathlib.Path(__file__).resolve().parents[1]  # project root
+#SRC_DIR = ROOT_DIR / "src"
+#if SRC_DIR.exists():
+    #sys.path.insert(0, str(SRC_DIR))
 
 from goph419lab01 import functions
 
@@ -30,7 +39,7 @@ def run_basic_test():
 
 
 def plot_alpha_variation():
-    # Holding ve_v0 = 2.0, vary alpha
+    # Holding ve_v0 = 2.0, alpha will vary
     ve_v0 = 2.0
     tol_alpha = 0.04
     alphas = np.linspace(0.001, 1.0, 200)  # from very small to 1.0
