@@ -13,12 +13,6 @@ import pathlib
 import numpy as np
 import matplotlib.pyplot as plt
 
-# -have to add src/ to sys.path (so it will work on other machines) ---
-
-#ROOT_DIR = pathlib.Path(__file__).resolve().parents[1]  # project root
-#SRC_DIR = ROOT_DIR / "src"
-#if SRC_DIR.exists():
-    #sys.path.insert(0, str(SRC_DIR))
 
 from goph419lab01 import functions
 
