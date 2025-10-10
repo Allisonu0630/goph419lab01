@@ -7,9 +7,6 @@ import numpy as np
 import os
 import sys
 
-#hard coding path to root so it can run on other devices
-#repo_root = #os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-#sys.path.append(os.path.join(repo_root, "src"))
 
 from goph419lab01 import functions
 
