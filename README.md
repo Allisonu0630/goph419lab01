@@ -1,8 +1,9 @@
-# goph419lab01: Taylor Series Approximations and Launch Angle Analysis
+# goph419lab01
 # author: Allison Unruh
 Course:GOPH 419
 Instructor:B. Karchewski 
-Lab purpose: investigates use of taylor series for approximating mathematical functions. Implement custom algorithms for calculating sqrt of a number using taylor series, compute inverse sine function, model the launch angle for a rocket to reach it's desired altitude and analyze the launch angle range.
+Lab purpose: Calculate the range of launch angles for a rocket system.
+Implement custom algorithms for calculating sqrt of a number using taylor series, compute inverse sine function, model the launch angle for a rocket to reach it's desired altitude and analyze the launch angle range.
 
 
 #installation---> clone repo. 
@@ -10,7 +11,7 @@ Lab purpose: investigates use of taylor series for approximating mathematical fu
 
 git clone https://github.com/allisonu0630/goph419lab01.git
 
-cd goph419lab01
+cd C:\Users\allis\Repos\Courses\goph419\goph419lab01
 
 python -m venv envlab1
 
@@ -21,7 +22,7 @@ python -m pip install -r requirements.txt
 # to calc launch angles and create plots
 ''' bash
 
-python examples/driver.py
+python -m goph419lab01.examples.driver
 
 #to test against NumPy 
 '''bash
